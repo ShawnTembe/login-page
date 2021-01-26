@@ -15,3 +15,14 @@
     width: 100%;
     display: block;
 }
+
+label {
+    margin-bottom: 0.5rem;
+}
+
+input {
+    border: none;
+    border-radius: 4px;
+    height: 54px;
+    background: #efefef
+}

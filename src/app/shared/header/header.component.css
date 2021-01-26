@@ -1,0 +1,17 @@
+.navbar-brand {
+    background: url(../../../assets/logo.png);
+    height: 50px;
+    width: 100px;
+    background-position: 50%;
+    background-size: cover;
+    margin-right: 50px;
+}
+
+.bg-black{
+    background-color: black;
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color: #fff;
+    margin-right: 20px;
+}
