@@ -18,7 +18,7 @@
 
             <div class="mb-3">
                 <label>Password</label>
-                <input type="password" class="form-control" formControlName="password" />
+                <input type="password" class="form-control" formControlName="password"/>
                 <div *ngIf="loginForm.get('password').touched && !loginForm.get('password').valid">
                     <div *ngIf="loginForm.get('password').errors.required"> Password is required</div>
                 </div>
