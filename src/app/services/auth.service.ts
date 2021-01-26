@@ -34,7 +34,7 @@ export class AuthService {
         return user;
     }
     getErrorMessage(message: string) {
-      switch(message) {
+      switch (message) {
         case 'EMAIL_NOT_FOUND':
           return 'Email Not Found';
         case 'INVALID_PASSWORD':

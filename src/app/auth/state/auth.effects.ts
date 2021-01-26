@@ -38,13 +38,25 @@ import {
             catchError((errResp) => {
                 this.store.dispatch(setLoadingSpinner({ status: false }));
                 const errorMessage = this.authService.getErrorMessage(
-                    errResp.error.message
+                  errResp.error.error.message
                 );
                 return of(setErrorMessage({ message: errorMessage }));
-            })
+              })
           );
         })
       );
     });
+
+    loginRedirect$ = createEffect(
+      () => {
+        return this.actions$.pipe(
+          ofType(loginSuccess),
+          tap((action) => {
+            this.router.navigate(['/'])
+          })
+        );
+      },
+      { dispatch: false }
+    );
   }
   
