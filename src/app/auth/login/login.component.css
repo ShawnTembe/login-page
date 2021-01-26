@@ -26,3 +26,8 @@ input {
     height: 54px;
     background: #efefef
 }
+
+.error {
+    color: red;
+    margin-top: 10px;
+}
