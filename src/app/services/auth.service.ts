@@ -13,6 +13,8 @@ import { AuthResponseData } from '../models/AuthResponseData.model';
 
 export class AuthService {
     timeoutInterval: any;
+    static loginSuccess: any;
+    static login: any;
     constructor(private http: HttpClient, private store: Store<AppState>) {}
 
     login(email: string, password: string): Observable<AuthResponseData> {
