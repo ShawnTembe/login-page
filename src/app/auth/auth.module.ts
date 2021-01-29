@@ -17,12 +17,12 @@ const routes: Routes = [
 ];
 
 @NgModule({
-    declarations: [LoginComponent],
-    imports: [ 
-      CommonModule, 
-      ReactiveFormsModule,
-      EffectsModule.forFeature(),
-      RouterModule.forChild(routes)],
-  })
-
-  export class AuthModule {}
+  declarations: [LoginComponent],
+  imports: [
+    CommonModule,
+    ReactiveFormsModule,
+    EffectsModule.forFeature(),
+    RouterModule.forChild(routes),
+  ],
+})
+export class AuthModule {}

@@ -2,7 +2,7 @@ import { loginSuccess } from './auth.actions';
 import { createReducer, on } from '@ngrx/store';
 import { initialState } from './auth.state';
 
-const _authReducer = createReducer(
+const authReducer = createReducer(
   initialState,
   on(loginSuccess, (state, action) => {
     return {
@@ -13,5 +13,5 @@ const _authReducer = createReducer(
 );
 
 export function AuthReducer(state, action) {
-  return _authReducer(state, action);
+  return authReducer(state, action);
 }

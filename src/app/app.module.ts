@@ -28,11 +28,10 @@ import { appReducer } from './store/app.state';
     StoreDevtoolsModule.instrument({
       logOnly: environment.production,
     }),
-   
-    AppRoutingModule
+
+    AppRoutingModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
-
+export class AppModule {}

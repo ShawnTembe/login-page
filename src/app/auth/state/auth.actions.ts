@@ -6,14 +6,16 @@ export const LOGIN_SUCCESS = '[auth page] login success';
 export const LOGIN_FAIL = '[auth page] login fail';
 
 export const loginStart = createAction(
-    LOGIN_START, props<{ email: string; password: string }>()
-  );
+  LOGIN_START,
+  props<{ email: string; password: string }>()
+);
 
-  export const loginSuccess = createAction(
-    LOGIN_SUCCESS, props<{ user: User; redirect: boolean }>()
-  );
+export const loginSuccess = createAction(
+  LOGIN_SUCCESS,
+  props<{ user: User; redirect: boolean }>()
+);
 
-  export const loginFail = createAction(
-    LOGIN_FAIL, props<{ user: User; redirect: boolean }>()
-  );
-  
+export const loginFail = createAction(
+  LOGIN_FAIL,
+  props<{ user: User; redirect: boolean }>()
+);

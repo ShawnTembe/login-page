@@ -12,11 +12,9 @@ describe('LoginComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ LoginComponent ],
-      imports: [ ReactiveFormsModule,
-        StoreModule.forRoot(appReducer), ]
-    })
-    .compileComponents();
+      declarations: [LoginComponent],
+      imports: [ReactiveFormsModule, StoreModule.forRoot(appReducer)],
+    }).compileComponents();
   }));
 
   beforeEach(() => {
@@ -25,7 +23,7 @@ describe('LoginComponent', () => {
     fixture.detectChanges();
   });
 
-  it('[Email-Check] - should check users email address is invalid', ()=>{
+  it('[Email-Check] - should check users email address is invalid', () => {
     const email = component.loginForm.controls['email'];
     expect(email.valid).toBeFalsy();
     expect(email.pristine).toBeTruthy();
@@ -35,38 +33,38 @@ describe('LoginComponent', () => {
     expect(email.errors['email']).toBeTruthy();
   });
 
-  it('[Email-Check] - should check users correct email address is entered', ()=>{
+  it('[Email-Check] - should check users correct email address is entered', () => {
     const email = component.loginForm.controls['email'];
     email.setValue('test@test.com');
     expect(email.errors).toBeNull();
   });
 
-  it('[Password-Check] - should check password errors', ()=>{
+  it('[Password-Check] - should check password errors', () => {
     const password = component.loginForm.controls['password'];
     expect(password.errors['required']).toBeTruthy();
     password.setValue('1234');
     expect(password.errors['minlength']).toBeTruthy();
   });
 
-  it('[Password-Check] - should check password validity', ()=>{
+  it('[Password-Check] - should check password validity', () => {
     const password = component.loginForm.controls['password'];
     password.setValue('123456');
     expect(password.errors).toBeNull();
     expect(password.valid).toBeTruthy();
   });
 
-  it('[Form-Check] - should check form is valid or not if no values entered', ()=>{
+  it('[Form-Check] - should check form is valid or not if no values entered', () => {
     expect(component.loginForm.valid).toBeFalsy();
   });
 
-  it('[Form-Check] - should check form is valid or not if no values entered', ()=>{
+  it('[Form-Check] - should check form is valid or not if no values entered', () => {
     component.loginForm.controls['email'].setValue('test@test.com');
     component.loginForm.controls['password'].setValue('123456');
 
     expect(component.loginForm.valid).toBeTruthy();
   });
 
-  it('[Formm-Submit] - should check form is submited', ()=>{
+  it('[Formm-Submit] - should check form is submited', () => {
     expect(component.loginForm.invalid).toBeTruthy;
     const btn = fixture.debugElement.query(By.css('input[type=submit]'));
 
@@ -76,7 +74,6 @@ describe('LoginComponent', () => {
 
     component.onLoginSubmit();
     fixture.detectChanges();
-    
   });
 
   it('should create', () => {
