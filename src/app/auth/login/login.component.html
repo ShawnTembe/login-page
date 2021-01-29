@@ -9,6 +9,7 @@
                 <input type="text" class="form-control" formControlName="email" placeholder="your-email@test.com"/>
                 <div *ngIf="loginForm.get('email').touched && !loginForm.get('email').valid">
                     <div class="error" *ngIf="loginForm.get('email').errors.required"> Email is required</div>
+                    <div class="error" *ngIf="loginForm.get('email').errors.email">Invalid Email</div>
                 </div>
             </div>
 
@@ -17,8 +18,13 @@
                 <input type="password" class="form-control" formControlName="password" placeholder="Your Password"/>
                 <div *ngIf="loginForm.get('password').touched && !loginForm.get('password').valid">
                     <div class="error" *ngIf="loginForm.get('password').errors.required"> Password is required</div>
+                    <div class="error" *ngIf="loginForm.get('password').errors.minlength">
+                        Please enter a password at least 6 characters.
+                    </div>
                 </div>
             </div>
+
+            
 
             <div class="mb-3">
                 <button type="submit" class="btn btn-primary btn-block" >Login</button>

@@ -52,7 +52,7 @@ import {
         return this.actions$.pipe(
           ofType(loginSuccess),
           tap((action) => {
-            this.router.navigate(['/'])
+            this.router.navigate(['/']);
           })
         );
       },

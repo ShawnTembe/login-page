@@ -26,7 +26,7 @@ describe('LoginComponent', () => {
   });
 
   it('[Email-Check] - should check users email address is invalid', ()=>{
-    let email = component.loginForm.controls['email'];
+    const email = component.loginForm.controls['email'];
     expect(email.valid).toBeFalsy();
     expect(email.pristine).toBeTruthy();
     expect(email.errors['required']).toBeTruthy();
@@ -36,20 +36,20 @@ describe('LoginComponent', () => {
   });
 
   it('[Email-Check] - should check users correct email address is entered', ()=>{
-    let email = component.loginForm.controls['email'];
+    const email = component.loginForm.controls['email'];
     email.setValue('test@test.com');
     expect(email.errors).toBeNull();
   });
 
   it('[Password-Check] - should check password errors', ()=>{
-    let password = component.loginForm.controls['password'];
+    const password = component.loginForm.controls['password'];
     expect(password.errors['required']).toBeTruthy();
     password.setValue('1234');
     expect(password.errors['minlength']).toBeTruthy();
   });
 
   it('[Password-Check] - should check password validity', ()=>{
-    let password = component.loginForm.controls['password'];
+    const password = component.loginForm.controls['password'];
     password.setValue('123456');
     expect(password.errors).toBeNull();
     expect(password.valid).toBeTruthy();
@@ -68,7 +68,7 @@ describe('LoginComponent', () => {
 
   it('[Formm-Submit] - should check form is submited', ()=>{
     expect(component.loginForm.invalid).toBeTruthy;
-    let btn = fixture.debugElement.query(By.css('input[type=submit]'));
+    const btn = fixture.debugElement.query(By.css('input[type=submit]'));
 
     component.loginForm.controls['email'].setValue('test@test.com');
     component.loginForm.controls['password'].setValue('123456');
@@ -77,7 +77,7 @@ describe('LoginComponent', () => {
     component.onLoginSubmit();
     fixture.detectChanges();
     
-  } )
+  });
 
   it('should create', () => {
     expect(component).toBeTruthy();

@@ -9,7 +9,7 @@ import { StoreModule } from '@ngrx/store';
 import { environment } from 'src/environments/environment';
 import { HomeComponent } from './home/home.component';
 import { HeaderComponent } from './shared/header/header.component';
-import { LoadSpinnerComponent } from './shared/load-spinner/load-spinner.component'
+import { LoadSpinnerComponent } from './shared/load-spinner/load-spinner.component';
 import { EffectsModule } from '@ngrx/effects';
 import { appReducer } from './store/app.state';
 
@@ -35,3 +35,4 @@ import { appReducer } from './store/app.state';
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
