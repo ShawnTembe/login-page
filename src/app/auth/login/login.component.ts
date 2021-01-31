@@ -12,7 +12,6 @@ import { loginStart } from './../state/auth.actions';
 })
 export class LoginComponent implements OnInit {
   loginForm: FormGroup;
-
   constructor(private store: Store<AppState>) {}
 
   ngOnInit(): void {

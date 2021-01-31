@@ -4,7 +4,7 @@ import {
 } from './../../store/Shared/shared.actions';
 import { AuthService } from './../../services/auth.service';
 import { exhaustMap, map, catchError, tap, mergeMap } from 'rxjs/operators';
-import { loginStart, loginSuccess } from './auth.actions';
+import { loginStart, loginSuccess, loginFail } from './auth.actions';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { Injectable } from '@angular/core';
 import { Store } from '@ngrx/store';

@@ -6,3 +6,5 @@ export interface AuthResponseData {
   localId: string;
   registered?: boolean;
 }
+
+export class AuthResponseData {}
