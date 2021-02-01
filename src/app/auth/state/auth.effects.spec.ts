@@ -30,7 +30,7 @@ describe('AuthEffect', () => {
     expect(effects).toBeTruthy();
   });
 
-  it('should login sucess', () => {
+  it('should login success', () => {
     const data = [
       {
         email: 'test@test.com',

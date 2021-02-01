@@ -1,28 +1,28 @@
 import { Action, createAction } from '@ngrx/store';
-import {loginStart, loginSuccess, loginFail} from './auth.actions';
+import { from } from 'rxjs';
+import { AuthResponseData } from 'src/app/models/AuthResponseData.model';
+import * as Actions from './auth.actions';
+import { User } from './../../models/user.model';
 
 describe('Auth Actions', () => {
   describe('authStart', () => {
     it('should create an action', () => {
-      const action = createAction.loginStart();
-      expect(action.login$).toBe(loginStart);
+      const action = Actions.loginStart({ email: '', password: '' });
+      expect(action.type).toEqual('[LOGIN_START] loginStart');
     });
   });
 
   describe('login successful', () => {
     it('should create an action', () => {
-     const action = createAction.LOGIN_START({email: 'test@test.com',
-     token: '222222222',
-     localId: '2222',
-     expirationDate: '20-12-2022',});
-      expect(action.login$).toBe(loginSuccess);
+     const action = Actions.loginStart({ email: '', password: '' });
+      expect(action.type).toEqual('[LOGIN_SUCCESS] loginSuccess');
     });
   });
 
   describe('login failed', () => {
     it('should create an action', () => {
-      const action = createAction.loginFail({error: 'Login failed'});
-      expect(action.login$).toBe(loginFail);
+      const action = Actions.loginStart({ email: '', password: '' });
+      expect(action.type).toEqual('[LOGIN_FAIL] loginFail');
     });
   });
 });
