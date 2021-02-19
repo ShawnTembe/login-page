@@ -1,4 +1,4 @@
-import { TestBed, async } from '@angular/core/testing';
+import { TestBed, waitForAsync } from '@angular/core/testing';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { provideMockActions } from '@ngrx/effects/testing';
 import { from, Observable } from 'rxjs';
@@ -16,7 +16,7 @@ describe('AuthEffect', () => {
   let service: AuthService;
   let effects: AuthEffects;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       imports: [HttpClientTestingModule],
       providers: [AuthService, AuthEffects, provideMockActions(() => actions$)],
